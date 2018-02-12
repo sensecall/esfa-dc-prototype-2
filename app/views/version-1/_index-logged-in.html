@@ -1,0 +1,123 @@
+<main id="content" role="main">
+	<div class="grid-row">
+		<div class="column-two-thirds">
+
+			<h1 class="heading-large">
+				Your funding
+			</h1>
+			
+			
+
+			<ol class="list list-number">
+				<li>Do this thing first</li>
+				<li>Then this one second</li>
+			</ol>
+
+			<h2 class="heading-medium">
+				Individualised Learner Records (ILR)
+			</h2>
+
+			<div class="panel panel-purple">
+				<h3 class="heading-small">You haven't filed a return</h3>
+				<p>Return Period 6 closes on December 18th 2017 but you haven't submitted an ILR file yet.</p>
+			</div>
+
+			<p><a href="#" class="button">Submit ILR file</a></p>
+			<p><a href="ilr-submissions/ilr-submission-history">View previous ILR submissions</a></p>
+			<details>
+				<summary><span class="summary">I don't know what an ILR is</span></summary>
+
+				<div class="panel panel-border wide">
+					<p>
+						If you’re not sure about your nationality, try to find out from an official document like a passport or national ID card.
+					</p>
+
+					<p>
+						We need to know your nationality so we can work out which elections you’re entitled to vote in. If you can’t provide your nationality, you’ll have to send copies of identity documents through the post.
+					</p>
+				</div>
+			</details>
+
+			<hr>
+
+			<h2 class="heading-medium">
+				Earnings Adjustment Statements (EAS)
+			</h2>
+
+
+			<h2 class="heading-medium">Other resources</h2>
+
+			<ul class="list list-bullet">
+				<li>
+					<a href="https://govuk-elements.herokuapp.com/snippets/">
+						Guide to GOV.UK Elements
+					</a>
+				</li>
+				<li>
+					<a href="https://www.gov.uk/service-manual">
+						Service design manual
+					</a>
+				</li>
+				<li>
+					<a href="https://www.gov.uk/design-principles">
+						Government Digital Service Design Principles
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="column-one-third">
+			<aside>
+				<br>
+				<h1 class="heading-medium">			
+					{% if data['provider-name'] %}
+					{{ data['provider-name'] }}
+					{% else %}
+					Cambridge College
+					{% endif %}<br>
+					<span class="font-xsmall">
+						(UKPRN: {% if data['ukprn-number'] %}{{ data['ukprn-number'] }}{% else %}10008273{% endif %})<br>
+						(UPIN: 10008273)
+					</span>
+				</h1>
+				<p class="font-xsmall bold">Welcome, {% if data['user-name'] %}{{ data['user-name'] }}{% else %}Ann Smith{% endif %}</p>
+				<ul class="font-xsmall">
+					<li><a href="/hub-v4" class="active">Hub Home</a></li>
+					<li><a href="#">Manage your account</a></li>
+					<li><a href="./login?authenticated=false">Log out</a></li>
+				</ul>
+			</aside>
+
+			<h3 class="heading-medium">
+				Latest information 
+				<div class="font-xsmall">12th December 2017</div>
+			</h3>
+			<p>Qualification achievement rates for 2016 to 2017 - provisional data now available.</p>
+			<p>Guidance on how to use your data extracts can be found here.</p>
+			<p><a href="#">See all announcements</a></p>
+
+			<aside class="govuk-related-items" data-module="track-click" role="complementary">
+				<h2 class="heading-medium">
+					Claiming funding for your organisation
+				</h2>
+
+				<nav role="navigation">
+					<ul>
+						<li>
+							<a href="#">How to return ILR final funding claims to the ESFA</a>
+						</li>
+						<li>
+							<a href="#">Data collection for further education providers</a>
+						</li>
+						<li>
+							<a href="#">Further education funding data</a>
+						</li>
+						<li>
+							<a href="#">ESFA: Inform newsletter</a>
+						</li>
+					</ul>
+				</nav>
+			</aside>
+		</div>
+	</div>
+</main>

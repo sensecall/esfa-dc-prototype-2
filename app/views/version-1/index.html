@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<!-- if the user is logged in show the logged in view -->
+{% if data["authenticated"] == "true" %}
+{% include './_index-logged-in.html' %}
+<!-- otherwise show the logged out version -->
+{% else %}
+{% include './_index-logged-out.html' %}
+{% endif %}
+<!-- end if statement -->
+
+{% endblock %}
