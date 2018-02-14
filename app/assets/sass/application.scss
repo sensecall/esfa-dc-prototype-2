@@ -332,4 +332,17 @@ p {
   @extend .panel-border-wide;
   background: mix(white,$purple,90%);
   border-color: $purple;
-}     
+}
+// ---------------------------------------------------
+// Title: summaries
+// usage: for non urgent summaries of information
+.warning-summary {
+  @extend .error-summary;
+  border-color: $orange
+}
+.success-summary {
+  @extend .error-summary;
+  border-color: $turquoise
+}
+
+@import 'patterns/_global-nav';

@@ -2,29 +2,57 @@
 	<div class="grid-row">
 		<div class="column-two-thirds">
 
-			<h1 class="heading-large">
-				Your funding
+			<h1 class="heading-xlarge">
+				Your data submissions
 			</h1>
-			
-			
 
-			<ol class="list list-number">
-				<li>Do this thing first</li>
-				<li>Then this one second</li>
-			</ol>
-
-			<h2 class="heading-medium">
+			<h2 class="heading-large">
 				Individualised Learner Records (ILR)
 			</h2>
 
-			<div class="panel panel-purple">
-				<h3 class="heading-small">You haven't filed a return</h3>
-				<p>Return Period 6 closes on December 18th 2017 but you haven't submitted an ILR file yet.</p>
-			</div>
+			{% if data['ILR-status'] == 'error' %}
+			<div class="warning-summary">
+				<h2 class="heading-small error-summary-heading">
+					63 errors were found in your latest ILR submission
+				</h2>
 
-			<p><a href="#" class="button">Submit ILR file</a></p>
-			<p><a href="ilr-submissions/ilr-submission-history">View previous ILR submissions</a></p>
-			<details>
+				<p>
+					A total of 467 learners were identified.
+				</p>
+
+				<p>
+					<a href="#">View details about this submission</a>
+				</p>
+			</div>
+			{% elif data['ILR-status'] == 'valid' %}
+			<div class="success-summary">
+				<h2 class="heading-small error-summary-heading">
+					Your latest ILR submission has been processed
+				</h2>
+
+				<p>
+					Optional description here
+				</p>
+
+				<p>
+					<a href="#">View details about errors found</a>
+				</p>
+			</div>
+			{% else %}
+			<div class="panel panel-purple">
+				<h3 class="heading-small">You haven't submitted an ILR file</h3>
+				<p>Return Period 6 closes on December 18th 2017 and you haven't submitted an ILR file for that period yet.</p>
+			</div>
+			{% endif %}
+
+			<div class="form-group">
+				<a href="#" class="button">Submit ILR file</a>
+			</div>
+			<ul class="list">
+				<li><a href="ilr-submissions/ilr-submission-history">View your ILR history</a></li>
+				<li><a href="ilr-submissions/ilr-submission-history">More about ILR submissions</a></li>
+			</ul>
+			<!-- <details>
 				<summary><span class="summary">I don't know what an ILR is</span></summary>
 
 				<div class="panel panel-border wide">
@@ -36,11 +64,10 @@
 						We need to know your nationality so we can work out which elections you’re entitled to vote in. If you can’t provide your nationality, you’ll have to send copies of identity documents through the post.
 					</p>
 				</div>
-			</details>
+			</details> -->
 
-			<hr>
 
-			<h2 class="heading-medium">
+			<h2 class="heading-large">
 				Earnings Adjustment Statements (EAS)
 			</h2>
 
@@ -68,8 +95,7 @@
 
 		<div class="column-one-third">
 			<aside>
-				<br>
-				<h1 class="heading-medium">			
+				<h3 class="heading-medium">			
 					{% if data['provider-name'] %}
 					{{ data['provider-name'] }}
 					{% else %}
@@ -79,7 +105,7 @@
 						(UKPRN: {% if data['ukprn-number'] %}{{ data['ukprn-number'] }}{% else %}10008273{% endif %})<br>
 						(UPIN: 10008273)
 					</span>
-				</h1>
+				</h3>
 				<p class="font-xsmall bold">Welcome, {% if data['user-name'] %}{{ data['user-name'] }}{% else %}Ann Smith{% endif %}</p>
 				<ul class="font-xsmall">
 					<li><a href="/hub-v4" class="active">Hub Home</a></li>

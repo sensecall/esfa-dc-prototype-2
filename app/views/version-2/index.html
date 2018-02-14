@@ -1,3 +1,11 @@
+{% extends "./layout.html" %}
+
+{% block page_title %}
+{{serviceName}}
+{% endblock %}
+
+{% block content %}
+
 <main id="content" role="main">
 	<div class="breadcrumbs">
 		<ol>
@@ -37,6 +45,20 @@
 				<li>ESF Supplementary Data</li>
 			</ul>
 
+			<h2 class="heading-medium">If you're claiming funding for the first time</h2>
+
+			<p>Lorem ipsum dolore ut aute ut dolore cillum laboris irure elit consequat esse ut dolore mollit duis pariatur deserunt ea ad tempor anim.</p>
+
+			<p>Commodo ex cillum in non anim dolor excepteur ut do pariatur et:</p>
+			<ul class="list-bullet">
+			    <li>non duis reprehenderit nostrud</li>
+			    <li>quis esse incididunt in</li>
+			    <li>in pariatur culpa</li>
+			</ul>
+
+			<h2 class="heading-medium">Sign in to claim your funding</h2>
+
+			<p>You’ll need to sign in with your learning provider account.</p>
 			<p>
 				<a href="./login" class="button button-start">Sign in</a>
 			</p>
@@ -89,3 +111,5 @@
 		</div>
 	</div>
 </main>
+
+{% endblock %}
